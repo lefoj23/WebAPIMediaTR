@@ -36,7 +36,7 @@ namespace WebAPITest.Controllers
                 var command = new RegistrationCommand(request);
                 var resp = await _mediator.Send(command).ConfigureAwait(false);
 
-                if (!resp.Status)
+                if (resp != null && !resp.Status)
                     return BadRequest(resp.Message);
 
                 return Ok(resp);

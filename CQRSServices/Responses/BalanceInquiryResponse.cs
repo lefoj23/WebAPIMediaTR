@@ -10,6 +10,6 @@ namespace CQRSServices.Responses
     {
         public double CurrentBalance { get; set; }
         public double AvailableBalance { get; set; }
-        public DateTime TransactionDate { get; set; }
+        public DateTime? TransactionDate { get; set; }
     }
 }

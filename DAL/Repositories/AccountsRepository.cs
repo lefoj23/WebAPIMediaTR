@@ -68,8 +68,6 @@ namespace DAL.Repositories
 
             var model = _mapper.Map<AccountsDTO>(account);
 
-
-
             return model;
         }
 

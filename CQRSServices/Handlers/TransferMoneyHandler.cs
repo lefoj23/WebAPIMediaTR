@@ -39,6 +39,10 @@ namespace CQRSServices.Handlers
                 var recipient = request._transferMoneyRequest.recipient;
                 var transferMoneyAmount = (double)request._transferMoneyRequest.Amount;
 
+
+                if (recipient == accIdentity) throw new Exception("Invalid Recipient!");
+
+
                 var account = await _accountsRepository.Authenticate(accIdentity,password);
 
                 var isRecipientsExists = _accountsRepository.IsAccountExists(recipient);
