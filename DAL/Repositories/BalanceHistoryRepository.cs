@@ -19,8 +19,9 @@ namespace DAL.Repositories
     {
         private readonly MainDbContext _context;
         private readonly IMapper _mapper;
-        public BalanceHistoryRepository(MainDbContext context) {
-            _mapper = MapperConfig.InitializeAutoMapper(new MappingProfile());
+        public BalanceHistoryRepository(MainDbContext context,
+            IMapper mapper) {
+            _mapper = mapper;
             _context = context;
         }
 

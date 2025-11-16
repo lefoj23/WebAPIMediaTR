@@ -19,8 +19,9 @@ namespace DAL.Repositories
     {
         private readonly MainDbContext _context;
         private readonly IMapper _mapper;
-        public AccountsRepository(MainDbContext context) {
-            _mapper = MapperConfig.InitializeAutoMapper(new MappingProfile());
+        public AccountsRepository(MainDbContext context,
+            IMapper mapper) {
+            _mapper = mapper;
             _context = context;
         }
         public async Task<bool> AddAsync(AccountsDTO dto)

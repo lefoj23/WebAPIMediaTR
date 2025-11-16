@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.AutoMapper.MappingProfiles
 {
-    public class MappingProfile: Profile
+    public class  MappingProfile: Profile
     {
         public MappingProfile() {
             CreateMap<Accounts, AccountsDTO>().ReverseMap();

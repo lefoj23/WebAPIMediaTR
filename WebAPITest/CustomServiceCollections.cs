@@ -1,13 +1,14 @@
-﻿using DAL.Repositories.Interfaces;
-using DAL.Repositories;
-using MediatR;
-using CQRSServices.Handlers;
-using FluentValidation;
-using CQRSServices.Validators;
-using CQRSServices.Requests;
-using CQRSServices;
-using DemoTest.Services;
+﻿using CQRSServices;
 using CQRSServices.Commands;
+using CQRSServices.Handlers;
+using CQRSServices.Requests;
+using CQRSServices.Validators;
+using DAL.AutoMapper.MappingProfiles;
+using DAL.Repositories;
+using DAL.Repositories.Interfaces;
+using DemoTest.Services;
+using FluentValidation;
+using MediatR;
 
 namespace WebAPITest
 {
@@ -47,7 +48,9 @@ namespace WebAPITest
              ));
             #endregion
 
-
+            #region AutoMapper  
+            services.AddAutoMapper(cfg => { }, typeof(MappingProfile));
+            #endregion
 
             return services;
         }
